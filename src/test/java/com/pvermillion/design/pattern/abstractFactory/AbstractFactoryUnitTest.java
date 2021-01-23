@@ -24,8 +24,8 @@ public class AbstractFactoryUnitTest {
     }
 
     @DataProvider(name = "testFactoryClasses")
-    public static java.lang.Object[][] FactoryClasses() {
-        return new java.lang.Object[][] {
+    public static Object[][] FactoryClasses() {
+        return new Object[][] {
             {ShapeFactory, "com.pvermillion.design.pattern.abstractFactory.shape.factories.ShapeFactory"},
             {RoundedShapeFactory, "com.pvermillion.design.pattern.abstractFactory.shape.factories.RoundedShapeFactory"}
         };
@@ -39,8 +39,8 @@ public class AbstractFactoryUnitTest {
     }
 
     @DataProvider(name = "testFactoryProducedShapeClasses")
-    public static java.lang.Object[][] FactoryShapeClasses() {
-        return new java.lang.Object[][] {
+    public static Object[][] FactoryShapeClasses() {
+        return new Object[][] {
             {ShapeFactory, Square, "com.pvermillion.design.pattern.abstractFactory.shape.objects.Square"},
             {ShapeFactory, Rectangle, "com.pvermillion.design.pattern.abstractFactory.shape.objects.Rectangle"},
             {RoundedShapeFactory, Square, "com.pvermillion.design.pattern.abstractFactory.shape.objects.RoundedSquare"},
