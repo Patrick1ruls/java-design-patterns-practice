@@ -1,10 +1,13 @@
 package com.pvermillion.design.pattern.abstractFactory;
 
+import com.pvermillion.design.pattern.abstractFactory.item.factories.ItemFactory;
 import com.pvermillion.design.pattern.abstractFactory.shape.ShapeType;
 import com.pvermillion.design.pattern.abstractFactory.shape.factories.Factory;
 import com.pvermillion.design.pattern.abstractFactory.shape.factories.FactoryProducer;
 import com.pvermillion.design.pattern.abstractFactory.shape.factories.FactoryType;
 import com.pvermillion.design.pattern.abstractFactory.shape.objects.Shape;
+import com.pvermillion.design.pattern.builder.meal.objects.Item;
+import com.pvermillion.design.pattern.builder.meal.objects.ItemType;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -12,7 +15,7 @@ import static com.pvermillion.design.pattern.abstractFactory.shape.ShapeType.*;
 import static com.pvermillion.design.pattern.abstractFactory.shape.factories.FactoryType.*;
 import static org.testng.Assert.*;
 
-public class AbstractFactoryTest {
+public class AbstractFactoryUnitTest {
 
     @Test(dataProvider = "testFactoryClasses")
     public void createCorrectShapeFactories(FactoryType factoryType, String className) {
@@ -21,8 +24,8 @@ public class AbstractFactoryTest {
     }
 
     @DataProvider(name = "testFactoryClasses")
-    public static Object[][] FactoryClasses() {
-        return new Object[][] {
+    public static java.lang.Object[][] FactoryClasses() {
+        return new java.lang.Object[][] {
             {ShapeFactory, "com.pvermillion.design.pattern.abstractFactory.shape.factories.ShapeFactory"},
             {RoundedShapeFactory, "com.pvermillion.design.pattern.abstractFactory.shape.factories.RoundedShapeFactory"}
         };
@@ -36,15 +39,14 @@ public class AbstractFactoryTest {
     }
 
     @DataProvider(name = "testFactoryProducedShapeClasses")
-    public static Object[][] FactoryShapeClasses() {
-        return new Object[][] {
+    public static java.lang.Object[][] FactoryShapeClasses() {
+        return new java.lang.Object[][] {
             {ShapeFactory, Square, "com.pvermillion.design.pattern.abstractFactory.shape.objects.Square"},
             {ShapeFactory, Rectangle, "com.pvermillion.design.pattern.abstractFactory.shape.objects.Rectangle"},
             {RoundedShapeFactory, Square, "com.pvermillion.design.pattern.abstractFactory.shape.objects.RoundedSquare"},
             {RoundedShapeFactory, Rectangle, "com.pvermillion.design.pattern.abstractFactory.shape.objects.RoundedRectangle"}
         };
     }
-
 
 
 

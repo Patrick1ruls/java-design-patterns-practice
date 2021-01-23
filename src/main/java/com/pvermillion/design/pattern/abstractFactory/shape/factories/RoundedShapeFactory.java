@@ -3,6 +3,7 @@ package com.pvermillion.design.pattern.abstractFactory.shape.factories;
 import com.pvermillion.basic.Basic;
 import com.pvermillion.design.pattern.abstractFactory.shape.ShapeType;
 import com.pvermillion.design.pattern.abstractFactory.shape.objects.*;
+import com.pvermillion.design.pattern.abstractFactory.shape.objects.Shape;
 
 public class RoundedShapeFactory implements Factory {
     @Override
