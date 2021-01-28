@@ -48,6 +48,22 @@ public class AbstractFactoryUnitTest {
         };
     }
 
+    @Test(dataProvider = "testItemFactoryObjects")
+    public void createCorrectItemsFromFactory(ItemType itemType, String itemClassName) {
+        ItemFactory itemFactory = new ItemFactory();
+        Item item = itemFactory.getItem(itemType);
+        assertSame(item.getClass().getName(), itemClassName);
+    }
+
+    @DataProvider(name = "testItemFactoryObjects")
+    public static Object[][] ItemClasses() {
+        return new Object[][] {
+            {ItemType.Coke, "com.pvermillion.design.pattern.builder.meal.objects.Coke"},
+            {ItemType.Pepsi, "com.pvermillion.design.pattern.builder.meal.objects.Pepsi"},
+            {ItemType.ChickenBurger, "com.pvermillion.design.pattern.builder.meal.objects.ChickenBurger"},
+            {ItemType.VeggieBurger, "com.pvermillion.design.pattern.builder.meal.objects.VeggieBurger"}
+        };
+    }
 
 
 
