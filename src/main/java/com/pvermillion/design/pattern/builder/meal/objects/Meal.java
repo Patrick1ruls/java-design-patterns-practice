@@ -3,13 +3,14 @@ package com.pvermillion.design.pattern.builder.meal.objects;
 import com.pvermillion.basic.Basic;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Meal {
 
-    private ArrayList<Item> items = new ArrayList<>();
+    private List<Item> items = new ArrayList<>();
     private Item itemInstance;
 
-    public ArrayList<Item> getItems() {
+    public List<Item> getItems() {
         return items;
     }
 
@@ -33,6 +34,11 @@ public class Meal {
             ", Price: " + itemInstance.price();
     }
 
+
+    public void logCost() {
+        Basic.getLogger().info("Total cost of meal is " + getCost());
+    }
+
     public float getCost() {
         float cost = 0.0f;
 
@@ -41,4 +47,5 @@ public class Meal {
         }
         return cost;
     }
+
 }
